@@ -1,19 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-top-bar',
-  templateUrl: './top-bar.component.html',
-  styleUrls: ['./top-bar.component.css']
+  selector: "app-top-bar",
+  templateUrl: "./top-bar.component.html",
+  styleUrls: ["./top-bar.component.css"]
 })
 export class TopBarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  date;
+  toggle = true;
+  constructor() {
+    this.date = Date.now();
   }
 
-}
+  ngOnInit() {}
 
+  format() {
+    return this.toggle ? "shortDate" : "fullDate";
+  }
+  toggleFormat() {
+    this.toggle = !this.toggle;
+  }
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.
