@@ -1,7 +1,22 @@
-<div *ngFor="let item of items">
+<!-- <div *ngFor="let item of items">
 
 	<img [src]="item.url" [style]='"width:150px"'>
 	<h4>Product Name: {{item.name}}</h4>
 	<h3>Product Price: {{item.price}}</h3>
 
+</div> -->
+
+<h3>Cart Page </h3>
+
+<div class="item" *ngFor="let item of items">
+	<span>
+    {{productNumber +1}} {{ item.name }}
+  </span>
+	<span>
+    {{ item.price | currency: 'INR' }}
+  </span>
+
 </div>
+
+
+<a routerLink="/shipping">Check Shipping Charges</a>

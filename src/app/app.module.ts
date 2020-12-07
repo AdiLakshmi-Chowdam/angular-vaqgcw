@@ -12,14 +12,21 @@ import { DoublePipe } from "./double.pipe";
 import { CartService } from "./cart.service";
 import { CartComponent } from "./cart/cart.component";
 
+import { HttpClientModule } from "@angular/common/http";
+import { ShippingComponent } from "./shipping/shipping.component";
+import { InternalServerErrorComponent } from "./internal-server-error/internal-server-error.component";
+
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: "", component: ProductListComponent },
       { path: "products/:productId", component: ProductDetailsComponent },
-      { path: "cart", component: CartComponent }
+      { path: "cart", component: CartComponent },
+      { path: "shipping", component: ShippingComponent },
+      { path: "internal-server-error", component: InternalServerErrorComponent }
     ])
   ],
   declarations: [
@@ -29,7 +36,9 @@ import { CartComponent } from "./cart/cart.component";
     ProductAlertsComponent,
     ProductDetailsComponent,
     DoublePipe,
-    CartComponent
+    CartComponent,
+    ShippingComponent,
+    InternalServerErrorComponent
   ],
   bootstrap: [AppComponent],
   providers: [CartService]
