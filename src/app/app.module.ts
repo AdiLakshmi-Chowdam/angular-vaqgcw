@@ -15,6 +15,7 @@ import { CartComponent } from "./cart/cart.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ShippingComponent } from "./shipping/shipping.component";
 import { InternalServerErrorComponent } from "./internal-server-error/internal-server-error.component";
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { InternalServerErrorComponent } from "./internal-server-error/internal-s
     DoublePipe,
     CartComponent,
     ShippingComponent,
-    InternalServerErrorComponent
+    InternalServerErrorComponent,
+    HighlightDirective
   ],
   bootstrap: [AppComponent],
   providers: [CartService]
